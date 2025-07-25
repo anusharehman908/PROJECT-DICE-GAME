@@ -128,26 +128,28 @@
     color: #006400;
     min-height: 1.5em; /* prevent jump */
   }
+
+
 @media (max-width: 768px) {
   html, body {
-    overflow: hidden; /* prevent scrolling */
-    height: 100%;
+    overflow-y: auto;  /* Allow vertical scrolling */
+    overflow-x: hidden;
+    height: auto;
     width: 100%;
   }
 
   .container {
     padding: 15px 10px;
     max-width: 100vw;
-    max-height: 95vh;
     width: 100%;
-    height: 100%;
+    height: auto;
     box-shadow: none;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    overflow: hidden;
+    overflow: visible; /* Allow content to be visible */
   }
 
   h1 {
@@ -164,6 +166,7 @@
     width: 100%;
     padding: 0 5px;
     box-sizing: border-box;
+    flex-wrap: wrap;
   }
 
   .player {
@@ -172,26 +175,29 @@
     max-width: 45vw;
     gap: 6px;
     padding: 6px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .player h2 {
     font-size: 1rem;
     margin-bottom: 6px;
+    text-align: center;
   }
 
   .dice {
-      margin-top: 30px;
+    margin-top: 10px;
     font-size: 45px;
     width: 70px;
-    height: 70px;
+    height: 95px;
     line-height: 70px;
     padding: 6px;
-    height:95px;
     box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
   }
 
   .player button {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
     padding: 7px 0;
     font-size: 0.85rem;
@@ -200,10 +206,11 @@
 
   .message {
     font-size: 1rem;
-    margin-top: 8px;
+    margin-top: 12px;
     min-height: 1.3em;
     padding: 0 8px;
     color: #006400;
     text-align: center;
+    word-break: break-word;
   }
 }
